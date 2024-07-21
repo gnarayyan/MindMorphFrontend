@@ -26,18 +26,19 @@ class CartResponseModel {
 }
 
 class Course {
-  int price;
+  double price;
+  double discountPercent;
   Author author;
 
-  Course({
-    required this.price,
-    required this.author,
-  });
+  Course(
+      {required this.price,
+      required this.author,
+      required this.discountPercent});
 
   factory Course._fromJson(Map<String, dynamic> json) => Course(
-        price: json["price"],
-        author: Author._fromJson(json["author"]),
-      );
+      price: (json["price"] * 100) / 100,
+      author: Author._fromJson(json["author"]),
+      discountPercent: (json["discountPercent"] * 100) / 100);
 }
 
 class Author {
@@ -95,7 +96,7 @@ class CartItemsResponseModel {
     return cartMap;
   }
 
-  double computeTotalPrice() {
+  double get totalPrice {
     double totalPrice = 0;
     for (var cart in data) {
       totalPrice += cart.course.price;

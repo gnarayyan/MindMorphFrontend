@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../enrollment/presentation/screens/purchased_courses_screen.dart';
 import '/modules/bottom_nav_bar/bottom_nav_bar.dart';
-import '/modules/screens/Enrolledcourse/enrollcourse.dart';
-import '/modules/screens/assignment/list.dart';
+import '../../../assignment/list.dart';
 import 'home_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +23,8 @@ class HomeScreen extends StatelessWidget {
           if (state.navbarItem == NavbarItem.assignment) {
             return AssignmentList();
           } else if (state.navbarItem == NavbarItem.myCourse) {
-            return EnrolledCourse();
+            return const PurchasedCoursesScreen();
+            // return EnrolledCourse();
           }
           return const HomePage();
         }),

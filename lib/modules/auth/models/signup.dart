@@ -26,7 +26,7 @@ class SignupFormModel {
   final fullName = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
-  final role = TextEditingController();
+  final role = TextEditingController(text: 'STUDENT');
   final birthdate = TextEditingController();
   File? avatar;
 

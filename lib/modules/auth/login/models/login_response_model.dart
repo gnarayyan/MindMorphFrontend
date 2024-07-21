@@ -64,6 +64,18 @@ class UserDataModel {
         "token": token,
         "isLogin": isLogin,
       };
+
+  bool get isStudent {
+    return role == 'STUDENT';
+  }
+
+  bool get isInstructor {
+    return role == 'INSTRUCTOR';
+  }
+
+  bool get isAdmin {
+    return role == 'ADMIN';
+  }
 }
 
 // If response code != 200

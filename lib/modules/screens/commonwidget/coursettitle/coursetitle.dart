@@ -46,7 +46,13 @@ Widget featurelistRow(
               width: double.infinity,
               height: 80,
             ),
-            name.text.fontFamily(semibold).size(3).color(titlecolor).make(),
+            name.text
+                .fontFamily(semibold)
+                .maxLines(2)
+                // .size(1)
+                .color(titlecolor)
+                .overflow(TextOverflow.ellipsis)
+                .make(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,7 +62,7 @@ Widget featurelistRow(
                       .color(const Color.fromRGBO(158, 158, 158, 1))
                       .lineThrough
                       .make(),
-                'Rs ${(price - (price * (100 - discountPercent) / 100)).toDoubleStringAsFixed(digit: 0)}'
+                'Rs ${(price * (1 - discountPercent / 100)).toDoubleStringAsFixed(digit: 0)}'
                     .text
                     .color(Colors.amber)
                     .make()

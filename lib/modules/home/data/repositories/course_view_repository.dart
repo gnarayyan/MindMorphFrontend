@@ -43,4 +43,15 @@ class CourseViewRepository {
 
     return coursesCarasoulData;
   }
+
+  //Recommended Courses
+  static Future<List<CourseCarasoulData>> recommendedCourses() async {
+    final response = await CourseViewProvider.recommendedCourses();
+
+    if (response.statusCode != 200) {
+      return [];
+    }
+
+    return CourseCarasoulData.fromResponseBody(response.body);
+  }
 }

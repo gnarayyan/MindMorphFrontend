@@ -8,8 +8,12 @@ final class CourseViewInitial extends CourseViewState {}
 final class CourseViewSuccess extends CourseViewState {
   final List<CourseCarasoulData> trendingCourses;
   final List<CourseCarasoulData> newCourses;
+  final List<CourseCarasoulData> recommendedCourses;
 
-  CourseViewSuccess({required this.trendingCourses, required this.newCourses});
+  CourseViewSuccess(
+      {required this.recommendedCourses,
+      required this.trendingCourses,
+      required this.newCourses});
 }
 
 final class CourseViewFailure extends CourseViewState {

@@ -32,18 +32,28 @@ class CartRepository {
   static Future<CartData> getAll() async {
     final response = await CartProvider.getAllCartItems();
     final responseData = CartItemsResponseModel.fromResponse(response);
-
     // final mapData = responseData.toMapData();
 
     //Course Server
     final coursesResponse =
         await InstructorCourses.byCoursesIds(responseData.toJsonRequestBody());
+    // print('Course CArt data: ${coursesResponse}');
     if (coursesResponse.statusCode != 200) {
       throw jsonDecode(coursesResponse.body);
     }
     final cartCourses =
         InstructorCourseModel.fromResponse(coursesResponse.body);
 
+    // print('Cart Courses: ${cartCourses}');
+
     return CartData(courseServer: cartCourses, mainServer: responseData);
+  }
+
+  // Add to Cart
+  static Future<ResponseModel> deleteCartItem(int cartId) async {
+    final response = await CartProvider.deleteCartItem(cartId);
+    final responseData = ResponseModel.fromResponse(response);
+
+    return responseData;
   }
 }

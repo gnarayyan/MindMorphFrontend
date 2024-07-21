@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mindmorph/constants/color.dart';
-
 import 'package:mindmorph/modules/course_player/presentation/widgets/description_view.dart';
-import 'package:mindmorph/modules/course_player/presentation/widgets/review_view.dart';
-
+import '../../../../review/presentation/section/review_section.dart';
 import '../../../models/course_details.dart';
 
 class DashboardTabController extends StatelessWidget {
-  const DashboardTabController(
-      {super.key,
-      required this.courseDetails,
-      required this.courseSectionView});
-
+  const DashboardTabController({
+    super.key,
+    required this.courseDetails,
+    required this.courseSectionView,
+    // required this.courseModel
+  });
+  // final CourseModel courseModel;
   final CourseDetailsModel courseDetails;
   final Widget courseSectionView;
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1,
       length: 3,
       child: Column(children: [
         Container(
@@ -42,10 +43,10 @@ class DashboardTabController extends StatelessWidget {
               DescriptionView(courseDetails: courseDetails),
               courseSectionView,
               // const SectionListView(),
-
-              const Column(
+              Column(
                 children: [
-                  ReviewView(),
+                  // send courseId & authorId
+                  ReviewSectionView(courseId: courseDetails.courseId),
                 ],
               ),
             ],

@@ -6,9 +6,13 @@ abstract class VideoEvent extends Equatable {
 
 class VideoUrlChanged extends VideoEvent {
   final String videoUrl;
+  final String videoTitle;
+  final String lectureId;
+  final bool isAttachment;
 
-  const VideoUrlChanged(this.videoUrl);
+  const VideoUrlChanged(
+      this.videoUrl, this.videoTitle, this.lectureId, this.isAttachment);
 
   @override
-  List<Object> get props => [videoUrl];
+  List<Object?> get props => [videoUrl, videoTitle, lectureId];
 }

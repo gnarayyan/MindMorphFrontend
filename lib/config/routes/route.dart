@@ -2,14 +2,16 @@ import 'package:go_router/go_router.dart';
 import 'package:mindmorph/modules/auth/screens/signup.dart';
 // import 'package:mindmorph/modules/home/presentation/screens/nav_bar.dart';
 // import 'package:mindmorph/modules/profile/screens/acountdetaildemo.dart';
-import 'package:mindmorph/modules/profile/screens/student_profile_screen.dart';
+import 'package:mindmorph/modules/profile/screens/profile_drawer_screen.dart';
+import '../../modules/gamification/presentation/screens/add_gamification_screen.dart';
 import '../../modules/home/presentation/screens/home_screen.dart';
 // import '/modules/home/button_nav_bar/presentation/navigation_root.dart';
-import '../../modules/screens/Enrolledcourse/enrollcourse.dart';
-import '../../modules/screens/Enrolledcourse/playvideo.dart';
 import '../../modules/search/presentation/screens/searchpage.dart';
 import '/modules/auth/login/presentation/screens/login.dart';
+import 'admin.routes.dart';
 import 'cart.routes.dart';
+import 'chat.routes.dart';
+import 'enrollment.routes.dart';
 import 'intial_route.dart';
 import 'profile.routes.dart';
 import 'course.routes.dart';
@@ -71,22 +73,29 @@ final router = GoRouter(
 
     //---------------------
 
-    GoRoute(
-      name:
-          'enrolledcourse', // Optional, add name to your routes. Allows you navigate by name instead of path
-      path: '/enrolledcourse',
-      builder: (context, state) => EnrolledCourse(),
-    ),
+    // GoRoute(
+    //   name:
+    //       'enrolledcourse', // Optional, add name to your routes. Allows you navigate by name instead of path
+    //   path: '/enrolledcourse',
+    //   builder: (context, state) => EnrolledCourse(),
+    // ),
 
-    GoRoute(
-      name:
-          'playenrollcourse', // Optional, add name to your routes. Allows you navigate by name instead of path
-      path: '/playenrollcourse',
-      builder: (context, state) => const Playenrollcourse(),
-    ),
+    // GoRoute(
+    //   name:
+    //       'playenrollcourse', // Optional, add name to your routes. Allows you navigate by name instead of path
+    //   path: '/playenrollcourse',
+    //   builder: (context, state) => const Playenrollcourse(),
+    // ),
 
     ...profileRoutes,
     ...courseRoutes,
     ...cartRoutes,
+    ...enrollmentRoutes,
+    ...chatRoutes,
+    ...adminRoutes,
+    GoRoute(
+      path: '/gamification',
+      builder: (context, state) => const GamificationScreen(),
+    ),
   ],
 );

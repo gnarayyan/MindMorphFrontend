@@ -11,8 +11,11 @@ class _CourseRepository {
     return course;
   }
 
-  static Future<CourseDetailsModel> getCourseDetail(int courseId) async {
-    final response = await CourseProvider.getCourseDetails(courseId);
+  static Future<CourseDetailsModel> getCourseDetail(int courseId,
+      {bool hasEnrolled = false}) async {
+    final response = await CourseProvider.getCourseDetails(courseId,
+        hasEnrolled: hasEnrolled);
+    // print('Response Body: ${response.body}');
     final courseDetail = CourseDetailsModel.fromResponseBody(response.body);
     return courseDetail;
   }
@@ -26,9 +29,13 @@ class CourseResponse {
     required this.courseDetails,
   });
 
-  static Future<CourseResponse> getData(int courseId) async {
-    final course = await _CourseRepository.getCourse(courseId);
-    final courseDetails = await _CourseRepository.getCourseDetail(courseId);
+  static Future<CourseResponse> getData(int courseId,
+      {bool hasEnrolled = false}) async {
+    final course = await _CourseRepository.getCourse(
+      courseId,
+    );
+    final courseDetails = await _CourseRepository.getCourseDetail(courseId,
+        hasEnrolled: hasEnrolled);
     final response =
         CourseResponse(course: course, courseDetails: courseDetails);
     return response;

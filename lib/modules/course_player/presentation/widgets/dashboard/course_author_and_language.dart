@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mindmorph/constants/color.dart';
 import 'package:mindmorph/constants/fonts.dart';
 import 'package:mindmorph/modules/course_player/models/course_model.dart';
+import 'package:mindmorph/utils/shorten_name.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CourseAuthorAndLanguage extends StatelessWidget {
@@ -13,7 +14,8 @@ class CourseAuthorAndLanguage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        course.author.fullName.text
+        shortenName(course.author.fullName)
+            .text
             .size(16)
             .fontFamily(bold)
             .color(subtexColor)

@@ -5,7 +5,7 @@ class CourseViewModel {
   Author author;
   double discountPercent;
   int id;
-  int price;
+  double price;
   double rating;
 
   CourseViewModel({
@@ -16,14 +16,16 @@ class CourseViewModel {
     required this.rating,
   });
 
+  static double makeDouble(dynamic value) {
+    return value != null ? 0.0 : (value * 10) / 10;
+  }
+
   factory CourseViewModel._fromJson(Map<String, dynamic> json) =>
       CourseViewModel(
         author: Author.fromJson(json["author"]),
-        discountPercent: json["discountPercent"] != null
-            ? (json["discountPercent"] * 10) / 10
-            : 0.0,
+        discountPercent: makeDouble(json["discountPercent"]),
         id: json["id"],
-        price: json["price"],
+        price: makeDouble(json["price"]),
         rating: json["rating"] != null ? (json["rating"] * 10) / 10 : 0.0,
       );
 
@@ -45,7 +47,7 @@ class Author {
   });
 
   factory Author.fromJson(Map<String, dynamic> json) => Author(
-        fullName: json["fullName"],
+        fullName: json["fullName"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {

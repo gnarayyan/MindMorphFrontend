@@ -20,11 +20,24 @@ class TopNavBar extends StatelessWidget {
             color: titlecolor,
             onPressed: () => context.push('/profile'),
             icon: const Icon(Icons.person_rounded)),
-        const SizedBox(width: 180),
+        IconButton(
+          color: titlecolor,
+          onPressed: () => context.push('/chat/home'),
+          icon: const Icon(Icons.message),
+        ),
+        IconButton(
+          color: titlecolor,
+          onPressed: () => context.push('/assignment/add'),
+          icon: const Icon(Icons.games),
+        ),
+        IconButton(
+          color: titlecolor,
+          onPressed: () => context.push('/gamification'),
+          icon: const Icon(Icons.assignment),
+        ),
         IconButton(
           color: titlecolor,
           onPressed: () => context.push('/cart'),
-          // context.go('/course/sections/24'),
           icon: const Icon(Icons.shopping_cart),
         ),
         IconButton(

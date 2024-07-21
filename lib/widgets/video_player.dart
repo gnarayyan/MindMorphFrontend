@@ -16,7 +16,7 @@ class _MindMorphVideoPlayerState extends State<MindMorphVideoPlayer> {
     autoDetectFullscreenDeviceOrientation: true,
     fit: BoxFit.contain,
     // aspectRatio: 16 / 9,
-    autoPlay: true, // TODO: set true
+    autoPlay: true,
     autoDispose: true,
   );
 

@@ -25,7 +25,10 @@ class QuickNavigatorButton extends StatelessWidget {
           color: const Color.fromARGB(255, 2, 91, 154),
           size: 30,
         ),
-        title: Text(labelText),
+        title: Text(
+          labelText,
+          style: const TextStyle(color: titlecolor),
+        ),
         trailing: IconButton(
             onPressed: onPressed,
             icon: const Icon(

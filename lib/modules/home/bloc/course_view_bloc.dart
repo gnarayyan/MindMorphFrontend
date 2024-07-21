@@ -22,12 +22,14 @@ class CourseViewBloc extends Bloc<CourseViewEvent, CourseViewState> {
 
       final trendingCourses = await CourseViewRepository.trendingCourses();
       final newCourses = await CourseViewRepository.newCourses();
+      final recommendedCourses =
+          await CourseViewRepository.recommendedCourses();
 
       emit(
         CourseViewSuccess(
-          trendingCourses: trendingCourses,
-          newCourses: newCourses,
-        ),
+            trendingCourses: trendingCourses,
+            newCourses: newCourses,
+            recommendedCourses: recommendedCourses),
       );
     } catch (e) {
       return emit(CourseViewFailure(e.toString()));

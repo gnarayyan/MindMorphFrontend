@@ -28,4 +28,15 @@ class CartProvider {
       throw 'Failed on Connecting to Server: ${e.toString()}';
     }
   }
+
+  static Future<http.Response> deleteCartItem(int cartId) async {
+    final uri = Uri.http(NODE_SERVER, '/cart/$cartId');
+
+    try {
+      final response = await http.delete(uri);
+      return response;
+    } catch (e) {
+      throw 'Failed on Connecting to Server: ${e.toString()}';
+    }
+  }
 }

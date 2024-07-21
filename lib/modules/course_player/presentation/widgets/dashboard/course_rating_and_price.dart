@@ -17,7 +17,7 @@ class CourseRatingAndPrice extends StatelessWidget {
           children: [
             if (course.discountPercent > 0)
               'Rs ${course.price}'.text.color(Colors.grey).lineThrough.make(),
-            '     Rs ${(course.price - (course.price * (100 - course.discountPercent) / 100)).toDoubleStringAsFixed(digit: 0)}'
+            '     Rs ${(course.price * (1 - course.discountPercent / 100)).toDoubleStringAsFixed(digit: 0)}'
                 .text
                 .color(Colors.amber)
                 .make(),

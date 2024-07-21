@@ -67,4 +67,33 @@ class UserStorage {
     final storage = await SharedPreferences.getInstance();
     return storage.containsKey(_IS_LOGIN);
   }
+
+  static Future<void> switchProfile() async {
+    const instructor = 'INSTRUCTOR';
+    const student = 'STUDENT';
+
+    final storage = await SharedPreferences.getInstance();
+    String? role = storage.getString(_ROLE);
+
+    if (role == null) return;
+
+    final roleData = role == student ? instructor : student;
+
+    await storage.setString(_ROLE, roleData);
+  }
+
+  static Future<bool> get isStudent async {
+    final storage = await SharedPreferences.getInstance();
+    return storage.getString(_ROLE) == 'STUDENT';
+  }
+
+  static Future<bool> get isInstructor async {
+    final storage = await SharedPreferences.getInstance();
+    return storage.getString(_ROLE) == 'INSTRUCTOR';
+  }
+
+  static Future<bool> get isAdmin async {
+    final storage = await SharedPreferences.getInstance();
+    return storage.getString(_ROLE) == 'ADMIN';
+  }
 }

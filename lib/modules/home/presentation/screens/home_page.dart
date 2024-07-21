@@ -38,9 +38,9 @@ class _HomePageState extends State<HomePage> {
             builder: (context, state) {
           if (state is CourseViewSuccess) {
             return HomeContainer(
-              trendingCourses: state.trendingCourses,
-              newCourses: state.newCourses,
-            );
+                trendingCourses: state.trendingCourses,
+                newCourses: state.newCourses,
+                recommendedCourses: state.recommendedCourses);
           }
 
           return const MindMorphLoadingIndicator();
