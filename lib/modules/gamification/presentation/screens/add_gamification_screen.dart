@@ -100,7 +100,7 @@ class _IniatializeCoursePageState extends State<GamificationScreen> {
                           backgroundColor: boxtilecolor,
                         ),
                         onPressed: () {},
-                        child: const Text('Add'),
+                        child: const Text('Submit'),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mindmorph/widgets/snackbar.dart';
 import '../../../../auth/login/data/local_storage/user_storage.dart';
 import '../../../bloc/course_init/course_initialize_bloc.dart';
 import '../../../models/course_init/submit_model.dart';
@@ -26,6 +27,8 @@ class SubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
+        print(
+            'Data: courseDomainId:$courseDomainId  courseCategoryId:$courseCategoryId');
         if (courseDomainId != null &&
             courseCategoryId != null &&
             languageChoice != null &&
@@ -36,13 +39,16 @@ class SubmitButton extends StatelessWidget {
             language: languageChoice!,
             price: double.parse(priceController.text.trim()),
           );
-          context.read<ListFetchBloc>().add(
-                SubmitSelections(dataToSubmit: dataToSubmit),
-              );
+          if (context.mounted) {
+            context.read<ListFetchBloc>().add(
+                  SubmitSelections(dataToSubmit: dataToSubmit),
+                );
+          }
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Please select both items')),
-          );
+          mindMorphSnackBar(
+              context: context,
+              message: 'All fields are required',
+              isError: true);
         }
       },
       child: Container(

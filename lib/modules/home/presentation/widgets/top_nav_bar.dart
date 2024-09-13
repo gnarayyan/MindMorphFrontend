@@ -25,16 +25,22 @@ class TopNavBar extends StatelessWidget {
           onPressed: () => context.push('/chat/home'),
           icon: const Icon(Icons.message),
         ),
-        IconButton(
-          color: titlecolor,
-          onPressed: () => context.push('/assignment/add'),
-          icon: const Icon(Icons.games),
-        ),
-        IconButton(
-          color: titlecolor,
-          onPressed: () => context.push('/gamification'),
-          icon: const Icon(Icons.assignment),
-        ),
+        // IconButton(
+        //   color: titlecolor,
+        //   onPressed: () => context.push('/assignment/add'),
+        //   icon: const Icon(Icons.assignment),
+        // ),
+        // BlocBuilder<NavigationCubit, NavigationState>(
+        //     builder: (context, state) {
+        //   if (state.isAdmin) {
+        //     return IconButton(
+        //       color: titlecolor,
+        //       onPressed: ,
+        //       icon: const Icon(Icons.games),
+        //     );
+        //   }
+        //   return const SizedBox();
+        // }),
         IconButton(
           color: titlecolor,
           onPressed: () => context.push('/cart'),

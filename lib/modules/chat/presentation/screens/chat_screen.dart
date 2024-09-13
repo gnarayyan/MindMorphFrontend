@@ -108,7 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
         final messageBox = SenderMessageCard(message: message);
         _messages.add(messageBox); // Add the message to the list before sending
       });
-      print('Message Sent: $message');
+      print('Message Sent: $jsonData');
       socket.emit('send-message', jsonData);
       _controller.clear();
     }

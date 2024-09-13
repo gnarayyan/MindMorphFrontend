@@ -14,7 +14,11 @@ class MindMorphAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(color: titlecolor, fontSize: 20),
+        style: const TextStyle(
+          color: titlecolor,
+          fontFamily: bold,
+          fontSize: 16,
+        ),
       ),
       actions: actions,
     );

@@ -64,7 +64,7 @@ class InstructorCoursesView extends StatelessWidget {
         itemBuilder: ((BuildContext context, index) {
           final course = courses[index];
           return SizedBox(
-            height: 100,
+            // height: 100,
             child: Card(
               elevation: 50,
               color: boxtilecolor,
@@ -87,12 +87,12 @@ class InstructorCoursesView extends StatelessWidget {
                     ),
                     title: Text(
                       course.title,
-                      style: const TextStyle(color: titlecolor, fontSize: 18),
+                      style: const TextStyle(color: titlecolor, fontSize: 14),
                     ),
                     subtitle: Text(
                       'Rs ${course.price!.toDoubleStringAsFixed(digit: 0)}',
                       style: const TextStyle(
-                          color: Color.fromRGBO(255, 193, 7, 1), fontSize: 14),
+                          color: Color.fromRGBO(255, 193, 7, 1), fontSize: 10),
                     ),
                   ),
                   // Row(

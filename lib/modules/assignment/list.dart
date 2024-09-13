@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '/constants/color.dart';
-import 'assignment.dart';
 import 'completedasiignment.dart';
 
 class User {
@@ -108,7 +107,7 @@ class AssignmentList extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const Asignmentpage(),
+                        builder: (context) => Completedassignmentlist(),
                       ),
                     );
                   },

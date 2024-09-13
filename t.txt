@@ -1,9 +1,0 @@
-Step 1: From your project repository, check out a new branch and test the changes.
-
-git checkout -b soorajydv-master master
-git pull https://github.com/soorajydv/MindMorph.git master
-Step 2: Merge the changes and update on GitHub.
-
-git checkout master
-git merge --no-ff soorajydv-master
-git push origin master

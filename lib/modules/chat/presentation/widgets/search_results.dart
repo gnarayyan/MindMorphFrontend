@@ -45,7 +45,9 @@ class SearchResults extends StatelessWidget {
                       builder: (context) => ChatScreen(
                           token: user.token,
                           receiver: Participant(
-                              id: receiver.id, fullName: receiver.fullName),
+                              id: receiver.id,
+                              fullName: receiver.fullName,
+                              avatar: receiver.avatar),
                           conversationId: -1),
                     ),
                   );

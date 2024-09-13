@@ -129,7 +129,7 @@ class ConversationList extends StatelessWidget {
           child: ListTile(
               leading: ClipOval(
                 child: Image.network(
-                  'http://$COURSE_SERVER/media/35/JPEG_20240711_165251_615767971781557682.jpg',
+                  'http://$NODE_SERVER/${receiver.avatar}',
                   fit: BoxFit.cover,
                   height: 50,
                   width: 50,

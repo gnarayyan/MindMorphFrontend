@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindmorph/widgets/app_bar.dart';
 import '/constants/color.dart';
 
 class User {
@@ -33,34 +34,7 @@ class Completedassignmentlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 80,
-        shadowColor: Colors.white,
-        foregroundColor: Colors.red,
-        backgroundColor: themecolor,
-        // actions: [
-        //   TextButton(
-        //     style: TextButton.styleFrom(
-        //         backgroundColor: boxtilecolor,
-        //         shape: RoundedRectangleBorder(
-        //             borderRadius: BorderRadius.circular(8),
-        //             side: BorderSide(color: titlecolor))),
-        //     onPressed: () {
-        //       //  Get.to({()=>});
-        //     },
-        //     child: Text(
-        //       'Done',
-        //       style: TextStyle(
-        //         color: Colors.white,
-        //       ),
-        //     ),
-        //   ),
-        // ],
-        title: const Text(
-          'Completed',
-          style: TextStyle(color: titlecolor),
-        ),
-      ),
+      appBar: const MindMorphAppBar(title: 'Created Assignments'),
       body: Container(
         color: themecolor,
         child: ListView.builder(

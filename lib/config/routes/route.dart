@@ -1,11 +1,10 @@
 import 'package:go_router/go_router.dart';
+import 'package:mindmorph/config/routes/assignment.routes.dart';
 import 'package:mindmorph/modules/auth/screens/signup.dart';
-// import 'package:mindmorph/modules/home/presentation/screens/nav_bar.dart';
-// import 'package:mindmorph/modules/profile/screens/acountdetaildemo.dart';
 import 'package:mindmorph/modules/profile/screens/profile_drawer_screen.dart';
 import '../../modules/gamification/presentation/screens/add_gamification_screen.dart';
+import '../../modules/gamification/presentation/screens/add_gamification_data_screen.dart';
 import '../../modules/home/presentation/screens/home_screen.dart';
-// import '/modules/home/button_nav_bar/presentation/navigation_root.dart';
 import '../../modules/search/presentation/screens/searchpage.dart';
 import '/modules/auth/login/presentation/screens/login.dart';
 import 'admin.routes.dart';
@@ -93,9 +92,18 @@ final router = GoRouter(
     ...enrollmentRoutes,
     ...chatRoutes,
     ...adminRoutes,
+    ...assignmentRoutes,
     GoRoute(
       path: '/gamification',
       builder: (context, state) => const GamificationScreen(),
     ),
+    GoRoute(
+      path: '/gamification/add',
+      builder: (context, state) => const AddGamificationDataScreen(),
+    ),
+    // GoRoute(
+    //   path: '/gamification/view',
+    //   builder: (context, state) => const ViewGamification(),
+    // ),
   ],
 );

@@ -8,6 +8,7 @@ import '../../models/course_init/response_model.dart';
 import '../../models/course_init/submit_model.dart';
 
 part 'course_initialize_event.dart';
+
 part 'course_initialize_state.dart';
 
 class ListFetchBloc extends Bloc<ListFetchEvent, ListFetchState> {

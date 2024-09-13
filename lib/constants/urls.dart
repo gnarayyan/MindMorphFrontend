@@ -1,7 +1,7 @@
 // var mobilePath = '192.168.1.70:8000';
 // ignore_for_file: constant_identifier_names
 
-const mobilePath = '192.168.1.77'; //'192.168.1.74';
+const mobilePath = '192.168.1.78'; //'192.168.1.74';
 const webPath = '127.0.0.1:8000';
 
 const NODE_SERVER = '$mobilePath:8000';

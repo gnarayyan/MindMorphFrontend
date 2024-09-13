@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class ConversationModel {
@@ -30,16 +31,16 @@ class ConversationModel {
 class Participant {
   int id;
   String fullName;
+  String avatar;
 
   Participant({
     required this.id,
     required this.fullName,
+    required this.avatar,
   });
 
   factory Participant.fromJson(Map<String, dynamic> json) => Participant(
-        id: json["id"],
-        fullName: json["fullName"],
-      );
+      id: json["id"], fullName: json["fullName"], avatar: json["avatar"]);
 
   Map<String, dynamic> toJson() => {
         "id": id,

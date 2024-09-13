@@ -17,7 +17,7 @@ class CourseViewModel {
   });
 
   static double makeDouble(dynamic value) {
-    return value != null ? 0.0 : (value * 10) / 10;
+    return value == null ? 0.0 : (value * 10) / 10;
   }
 
   factory CourseViewModel._fromJson(Map<String, dynamic> json) =>

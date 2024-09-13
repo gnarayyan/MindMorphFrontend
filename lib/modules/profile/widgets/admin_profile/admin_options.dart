@@ -17,9 +17,15 @@ class AdminOptions extends StatelessWidget {
       shrinkWrap: true,
       children: [
         QuickNavigatorButton(
-          labelText: 'Admin Panel',
-          icon: Icons.navigate_next,
-          onPressed: () => context.go('/admin/swiper'),
+          labelText: 'Carousel Data',
+          icon: Icons.view_carousel,
+          onPressed: () => context.push('/admin/swiper'),
+        ),
+        5.heightBox,
+        QuickNavigatorButton(
+          labelText: 'Gamification Data',
+          icon: Icons.games,
+          onPressed: () => context.push('/gamification/add'),
         ),
         5.heightBox,
         QuickNavigatorButton(

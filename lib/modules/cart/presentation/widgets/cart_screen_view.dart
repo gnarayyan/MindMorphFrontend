@@ -5,6 +5,7 @@ import 'package:mindmorph/constants/urls.dart';
 import 'package:mindmorph/modules/auth/login/data/local_storage/user_storage.dart';
 import 'package:mindmorph/modules/cart/data/repositories/cart_repository.dart';
 import 'package:mindmorph/modules/payment/payment_via_esewa.dart';
+import 'package:mindmorph/utils/shorten_name.dart';
 import 'package:mindmorph/widgets/error_page.dart';
 import 'package:mindmorph/widgets/snackbar.dart';
 
@@ -102,7 +103,8 @@ class _CartScreenViewState extends State<CartScreenView> {
                                   const Icon(Icons.person),
                                   const SizedBox(width: 5),
                                   Text(
-                                    data2.course.author.fullName,
+                                    shortenName(data2.course.author.fullName),
+                                    overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                         color:
                                             Color.fromARGB(255, 176, 176, 175)),
@@ -112,9 +114,9 @@ class _CartScreenViewState extends State<CartScreenView> {
                                   // ),
                                 ],
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                              Column(
+                                // mainAxisAlignment:
+                                // MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Rs $actualPrice',

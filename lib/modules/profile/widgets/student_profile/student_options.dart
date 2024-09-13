@@ -16,12 +16,12 @@ class StudentOptions extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       shrinkWrap: true,
       children: [
-        QuickNavigatorButton(
-          labelText: 'Personal Information',
-          icon: Icons.person,
-          onPressed: () {},
-        ),
-        5.heightBox,
+        // QuickNavigatorButton(
+        //   labelText: 'Personal Information',
+        //   icon: Icons.person,
+        //   onPressed: () {},
+        // ),
+        // 5.heightBox,
         QuickNavigatorButton(
           labelText: 'Certificates',
           icon: Icons.card_membership,
@@ -30,18 +30,18 @@ class StudentOptions extends StatelessWidget {
             context.push('/certificate/courses-completed');
           },
         ),
-        5.heightBox,
-        QuickNavigatorButton(
-          labelText: 'Grade',
-          icon: Icons.assessment,
-          onPressed: () {},
-        ),
-        5.heightBox,
-        QuickNavigatorButton(
-          labelText: 'Setting & Privacy',
-          icon: Icons.settings,
-          onPressed: () {},
-        ),
+        // 5.heightBox,
+        // QuickNavigatorButton(
+        //   labelText: 'Grade',
+        //   icon: Icons.assessment,
+        //   onPressed: () {},
+        // ),
+        // 5.heightBox,
+        // QuickNavigatorButton(
+        //   labelText: 'Setting & Privacy',
+        //   icon: Icons.settings,
+        //   onPressed: () {},
+        // ),
         5.heightBox,
         QuickNavigatorButton(
           labelText: 'Logout',

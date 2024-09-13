@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:flutter_file_downloader/flutter_file_downloader.dart';
+import 'package:mindmorph/widgets/app_bar.dart';
 import 'package:mindmorph/widgets/download_file_button.dart';
 
 class PDFViewScreen extends StatefulWidget {
@@ -47,13 +48,23 @@ class _PDFViewScreenState extends State<PDFViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.appBarTitle),
-        actions: [
-          Text('$currentPageNumber / $totalPageNumber'),
-          MindMorphDownloadFileButton(pdfUrl: widget.pdfUrl)
-        ],
-      ),
+      appBar: MindMorphAppBar(title: widget.appBarTitle, actions: [
+        Text(
+          '$currentPageNumber / $totalPageNumber',
+          style: const TextStyle(color: Colors.white),
+        ),
+        MindMorphDownloadFileButton(pdfUrl: widget.pdfUrl)
+      ])
+
+      // AppBar(
+      //   title: Text(widget.appBarTitle),
+      //   actions: [
+      //     Text('$currentPageNumber / $totalPageNumber'),
+      //     MindMorphDownloadFileButton(pdfUrl: widget.pdfUrl)
+      //   ],
+      // )
+
+      ,
       body: !isFileDownloaded
           ? const Center(
               child: CircularProgressIndicator(
